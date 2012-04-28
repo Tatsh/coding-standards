@@ -8,7 +8,7 @@
 * British spelling is preferred in documentation and comments, while American spelling must be used with identifiers (such as class names and variable names). ```analyzer``` not ```analyser``` in identifiers while preferring ```behaviour``` over ```behavior``` in comments.
 * All documentation within a documentation block must be spelled correctly (prefer British spelling) and have periods at the end of sentences.
 * Exception messages may omit periods, but should still follow the same spelling convention.
-* Single quotes should be preferred and double qoutes should only be used when necessary.
+* Single quotes should be preferred and double quotes should only be used when necessary.
 * Heredoc and nowdoc should only be used when absolutely necessary.
 
 ## PHP tags
@@ -19,7 +19,7 @@
 ## Keywords
 
 * The keywords ```TRUE```, ```FALSE``` and ```NULL``` shall always be in UPPERCASE.
-* Control strucutre keywords such as ```if``` and ```while``` must have a space after. They may not be treated like functions.
+* Control structure keywords such as ```if``` and ```while``` must have a space after. They may not be treated like functions.
 * The ```array``` keyword must always be written in lower-case.
 
 ### ```if```, ```else if```, ```else```
@@ -46,7 +46,7 @@ else {
 The ```:``` version of this is allowed only in templates.
 
 ```php
-<?php if ($expr): ?>
+<?php if ($exp): ?>
   <div class="special">Some text</div>
 <?php endif; ?>
 ```
@@ -57,7 +57,7 @@ The ```switch``` opening bracket must be on the same line as the statement. A ne
 
 ```php
 <?php
-switch ($expr) {
+switch ($exp) {
   case 1:
     echo 'First case';
     break;
@@ -83,7 +83,7 @@ Brackets follow the same rule as ```switch```. Each statement within this loop i
 
 ```php
 <?php
-while ($expr) {
+while ($exp) {
   // body
 }
 ?>
@@ -94,7 +94,7 @@ In a ```do while``` loop, the ```while``` statement shall be on the same line as
 <?php
 do {
   // body
-} while ($expr);
+} while ($exp);
 ```
 
 The ```:``` version of this is allowed in templates.
@@ -303,7 +303,7 @@ UTF-8 with no BOM is the only accepted encoding.
 
 ## Indenting
 
-Use an ident of 2 spaces. Do not use tabs.
+Use an indent of 2 spaces. Do not use tabs.
 
 ## Lines
 
