@@ -25,165 +25,167 @@
 
 # Example code
 
-    /*jshint expr:true */
-    /**
-     * A dependency function added to 00-deps.js. Please fix any function that
-     *   uses 'function name() {}' style to 'var name = function () {}'.
-     * @param {string|null} arg1 Argument description.
-     * @param {string} [arg2] Not required argument.
-     * @returns {string} Return value description.
-     */
-    var dependencyFunction = function (arg1, arg2) {
-      // Set the not required argument's value
-      // Note that the () for the second part make a difference
-      arg2 === undefined && (arg2 = '');
+```javascript
+/*jshint expr:true */
+/**
+ * A dependency function added to 00-deps.js. Please fix any function that
+ *   uses 'function name() {}' style to 'var name = function () {}'.
+ * @param {string|null} arg1 Argument description.
+ * @param {string} [arg2] Not required argument.
+ * @returns {string} Return value description.
+ */
+var dependencyFunction = function (arg1, arg2) {
+  // Set the not required argument's value
+  // Note that the () for the second part make a difference
+  arg2 === undefined && (arg2 = '');
 
-      // Brackets!
-      while (condition) {
-        condition = false;
-      }
+  // Brackets!
+  while (condition) {
+    condition = false;
+  }
 
-      for (var i = 0; i < something.length; i++) {
-        something[i] = something[i] + ' ';
-      }
+  for (var i = 0; i < something.length; i++) {
+    something[i] = something[i] + ' ';
+  }
 
-      // Only increasing i, so end bracket may be on the same line
-      for (var i = 0; i < something.length; i++) {}
+  // Only increasing i, so end bracket may be on the same line
+  for (var i = 0; i < something.length; i++) {}
 
-      var a = function () {
-        // function body
-      }; // Do not use function a() {} style
+  var a = function () {
+    // function body
+  }; // Do not use function a() {} style
 
-      // If a condition is to be made this way, the end bracket may be on the same line
-      if (condition) {}
-      else {
-        doSomething();
-      }
+  // If a condition is to be made this way, the end bracket may be on the same line
+  if (condition) {}
+  else {
+    doSomething();
+  }
 
-      if (condition) {
-        doSomething();
-      }
-      else if (condition2) {
-        doSomethingElse();
-      }
-      else {
-        doSomethingMore();
-      }
+  if (condition) {
+    doSomething();
+  }
+  else if (condition2) {
+    doSomethingElse();
+  }
+  else {
+    doSomethingMore();
+  }
 
-      // These will not be accepted
-      if (condition)
-      {
-        doSomething();
-      } else {
-        doSomethingElse();
-      }
+  // These will not be accepted
+  if (condition)
+  {
+    doSomething();
+  } else {
+    doSomethingElse();
+  }
 
-      if (condition)
-      {
-        doSomething();
-      }
-      else
-      {
-        doSomethingElse();
-      }
+  if (condition)
+  {
+    doSomething();
+  }
+  else
+  {
+    doSomethingElse();
+  }
 
-      // String recommendations
-      // - Please default to using single quotes
-      // - Use 1 space between the concatenation operator (+)
-      var a = ' ' + 'my' + 'string' + ' ';
+  // String recommendations
+  // - Please default to using single quotes
+  // - Use 1 space between the concatenation operator (+)
+  var a = ' ' + 'my' + 'string' + ' ';
 
-      return 'something';
-    };
+  return 'something';
+};
 
-    /**
-     * A blank parent class. Give the original description however. This lives
-     *   in 00-fMyClassOriginal.js.
-     * @constructor
-     * @returns {fMyClassOriginal} The class.
-     */
-    var fMyClassOriginal = function () {
-      return this;
-    };
-    /**
-     * Static method. Note that JavaScript 'extensions' never inherit static
-     *   methods. See below on how to copy the static method to the inheriting
-     *   class.
-     * @param {string} arg1 A string parameter.
-     * @returns {string} The processed string.
-     */
-    fMyClassOriginal.copyTheStaticMethod = function (arg1) {
-      return arg1.replace(/\s+/, '');
-    };
-    /**
-     * Instance method. See below on how to inherit.
-     *   This method returns nothing so we are not documenting a return value.
-     */
-    fMyClassOriginal.prototype.instanceMethod = function () {
-      fCore.debug('No return value');
-    };
+/**
+ * A blank parent class. Give the original description however. This lives
+ *   in 00-fMyClassOriginal.js.
+ * @constructor
+ * @returns {fMyClassOriginal} The class.
+ */
+var fMyClassOriginal = function () {
+  return this;
+};
+/**
+ * Static method. Note that JavaScript 'extensions' never inherit static
+ *   methods. See below on how to copy the static method to the inheriting
+ *   class.
+ * @param {string} arg1 A string parameter.
+ * @returns {string} The processed string.
+ */
+fMyClassOriginal.copyTheStaticMethod = function (arg1) {
+  return arg1.replace(/\s+/, '');
+};
+/**
+ * Instance method. See below on how to inherit.
+ *   This method returns nothing so we are not documenting a return value.
+ */
+fMyClassOriginal.prototype.instanceMethod = function () {
+  fCore.debug('No return value');
+};
 
-    /**
-     * A class description. Should be the same as the description Flourish
-     *   documentation has. This lives in 01-fMyClassExtends.js.
-     * @augments fMyClassOriginal
-     * @constructor
-     * @param {string} someParam A parameter description.
-     * @returns {fMyClassExtends} The class.
-     */
-    var fMyClassExtends = function (someParam) {
-      // Since this extends, we may want to call the parent constructor to get all the original properties
-      // This is like calling parent::__construct() in PHP
-      this.parent.constructor.call(this);
+/**
+ * A class description. Should be the same as the description Flourish
+ *   documentation has. This lives in 01-fMyClassExtends.js.
+ * @augments fMyClassOriginal
+ * @constructor
+ * @param {string} someParam A parameter description.
+ * @returns {fMyClassExtends} The class.
+ */
+var fMyClassExtends = function (someParam) {
+  // Since this extends, we may want to call the parent constructor to get all the original properties
+  // This is like calling parent::__construct() in PHP
+  this.parent.constructor.call(this);
 
-      /**
-       * @type string
-       * @private
-       */
-      this._someParam = someParam;
+  /**
+   * @type string
+   * @private
+   */
+  this._someParam = someParam;
 
-      return this;
-    };
-    /**
-     * To inherit the original prototype, we must instantiate the parent class
-     *   to this class' prototype.
-     * @private
-     * @type fMyClassOriginal
-     */
-    fMyClassExtends.prototype = new fMyClassOriginal();
-    /**
-     * Gets the someParam property. A public getter.
-     * @returns {string} The someParam property.
-     */
-    fMyClassExtends.prototype.getSomeParam = function () {
-      return this._someParam;
-    };
-    /**
-     * Sets the someParam property. A public setter.
-     * @returns {fMyClassExtends} The object to allow method chaining.
-     */
-    fMyClassExtends.prototype.setSomeParam = function (s) {
-      this._someParam = s;
-      return this;
-    };
-    /**
-     * Access to parent class. Add this only when necessary. Always name it
-     *   parent.
-     * @type fMyClassOriginal.prototype
-     */
-    fMyClassExtends.prototype.parent = fMyClassOriginal.prototype;
-    /**
-     * Documenting a private property/method is generally desired, but not
-     *   required.
-     * This property must be set for classes that extend or only the original
-     *   constructor will be called.
-     * @type function
-     * @private
-     */
-    fMyClassExtends.prototype.constructor = fMyClassExtends;
-    /**
-     * A static method copied from the original class for comformance and
-     *   similarity to the PHP class.
-     * @param {string} arg1 A string parameter.
-     * @returns {string} The processed string.
-     */
-    fMyClassExtends.copyTheStaticMethod = fMyClassOriginal.copyTheStaticMethod; 
+  return this;
+};
+/**
+ * To inherit the original prototype, we must instantiate the parent class
+ *   to this class' prototype.
+ * @private
+ * @type fMyClassOriginal
+ */
+fMyClassExtends.prototype = new fMyClassOriginal();
+/**
+ * Gets the someParam property. A public getter.
+ * @returns {string} The someParam property.
+ */
+fMyClassExtends.prototype.getSomeParam = function () {
+  return this._someParam;
+};
+/**
+ * Sets the someParam property. A public setter.
+ * @returns {fMyClassExtends} The object to allow method chaining.
+ */
+fMyClassExtends.prototype.setSomeParam = function (s) {
+  this._someParam = s;
+  return this;
+};
+/**
+ * Access to parent class. Add this only when necessary. Always name it
+ *   parent.
+ * @type fMyClassOriginal.prototype
+ */
+fMyClassExtends.prototype.parent = fMyClassOriginal.prototype;
+/**
+ * Documenting a private property/method is generally desired, but not
+ *   required.
+ * This property must be set for classes that extend or only the original
+ *   constructor will be called.
+ * @type function
+ * @private
+ */
+fMyClassExtends.prototype.constructor = fMyClassExtends;
+/**
+ * A static method copied from the original class for comformance and
+ *   similarity to the PHP class.
+ * @param {string} arg1 A string parameter.
+ * @returns {string} The processed string.
+ */
+fMyClassExtends.copyTheStaticMethod = fMyClassOriginal.copyTheStaticMethod; 
+```
