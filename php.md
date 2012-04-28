@@ -86,7 +86,6 @@ Brackets follow the same rule as ```switch```. Each statement within this loop i
 while ($exp) {
   // body
 }
-?>
 ```
 
 In a ```do while``` loop, the ```while``` statement shall be on the same line as the ending bracket of the ```do``` statement.
