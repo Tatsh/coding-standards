@@ -87,6 +87,7 @@ while ($exp) {
   // body
 }
 ?>
+```
 
 In a ```do while``` loop, the ```while``` statement shall be on the same line as the ending bracket of the ```do``` statement.
 
@@ -199,7 +200,7 @@ class mClassName extends bClassName implements Countable, ArrayAccess {
 * Abbreviations are not allowed.
 
 ```php
-< ?php
+<?php
 /**
  * A class description.
  * 
@@ -237,7 +238,7 @@ Note how the comment block for the method is indented when lines get close 80 ch
 * Visibility must always be specified explicitly. Even if the method is public this is not optional.
 * If the method is static, ```public``` must be before the ```static``` keyword.
 * Method names must be in ```camelCase```. Use of underscores is not allowed.
-* Keywords must be used correctly:
+* Prefixes must be used correctly:
   * ```check``` and ```is``` prefixes may only be used for methods that return boolean values.
   * ```get``` prefix may only be used for methods that return properties of the class or object.
   * ```set``` prefix may only be used for methods that set properties/settings of the class properties of the object.
