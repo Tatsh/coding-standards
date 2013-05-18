@@ -3,18 +3,17 @@
 * Never extend a host object other than `window`.
 * JSHint your code (`npm install jshint`) and fix most if not all code that gives warnings.
   * Only these JSHint annotations are allowed to make exceptions for code:
-      * ```expr```
-      * ```sub```
+      * `expr`
+      * `sub`
 * Document your code using JSDoc syntax.
   * Make sure only public methods and properties can appear in the documentation.
-  * Unlike PHP, if the method returns void (in the PHP documentation), do not document the return value.
   * Use no more than 80 characters per line (code and comments in code may use more than 80 characters).
-  * The return value must be documented properly: ```@returns {string|null} Return value description.```.
+  * The return value must be documented properly: `@returns {string|null} Return value description.`.
 * Never allow 'undefined' to be printed or added to a string from an undefined variable.
-* If ```a``` is supposed to be a string but was not passed and will be added to another string: ```a === undefined && (a = '');```
-* Please do not use ```function nameOfFunction() {}``` style anywhere in your code.
+* If `a` is supposed to be a string but was not passed and will be added to another string: `a === undefined && (a = '');`
+* Please do not use `function nameOfFunction() {}` style anywhere in your code.
 * All identifiers (including variables) and  should use `camelCaseStyle` and not `underscore_style`.
-* Use 2-spaces. Do not use real tabs.
+* Use 4 spaces. Do not use real tabs.
 * UTF-8 is the only accepted encoding.
 * Always leave a new line at the end of the file.
 * Use UNIX newlines; other formats will not be accepted (such as Windows CRLF).
@@ -98,11 +97,11 @@ var dependencyFunction = function (arg1, arg2) {
 
 /**
  * A blank parent class. Give the original description however. This lives
- *   in 00-fMyClassOriginal.js.
+ *   in 00-MyClassOriginal.js.
  * @constructor
- * @returns {fMyClassOriginal} The class.
+ * @returns {MyClassOriginal} The class.
  */
-var fMyClassOriginal = function () {
+var MyClassOriginal = function () {
   return this;
 };
 /**
@@ -112,26 +111,26 @@ var fMyClassOriginal = function () {
  * @param {string} arg1 A string parameter.
  * @returns {string} The processed string.
  */
-fMyClassOriginal.copyTheStaticMethod = function (arg1) {
+MyClassOriginal.copyTheStaticMethod = function (arg1) {
   return arg1.replace(/\s+/, '');
 };
 /**
  * Instance method. See below on how to inherit.
  *   This method returns nothing so we are not documenting a return value.
  */
-fMyClassOriginal.prototype.instanceMethod = function () {
+MyClassOriginal.prototype.instanceMethod = function () {
   fCore.debug('No return value');
 };
 
 /**
  * A class description. Should be the same as the description Flourish
- *   documentation has. This lives in 01-fMyClassExtends.js.
- * @augments fMyClassOriginal
+ *   documentation has. This lives in 01-MyClassExtends.js.
+ * @augments MyClassOriginal
  * @constructor
  * @param {string} someParam A parameter description.
- * @returns {fMyClassExtends} The class.
+ * @returns {MyClassExtends} The class.
  */
-var fMyClassExtends = function (someParam) {
+var MyClassExtends = function (someParam) {
   // Since this extends, we may want to call the parent constructor to get all the original properties
   // This is like calling parent::__construct() in PHP
   this.parent.constructor.call(this);
@@ -148,30 +147,30 @@ var fMyClassExtends = function (someParam) {
  * To inherit the original prototype, we must instantiate the parent class
  *   to this class' prototype.
  * @private
- * @type fMyClassOriginal
+ * @type MyClassOriginal
  */
-fMyClassExtends.prototype = new fMyClassOriginal();
+MyClassExtends.prototype = new MyClassOriginal();
 /**
  * Gets the someParam property. A public getter.
  * @returns {string} The someParam property.
  */
-fMyClassExtends.prototype.getSomeParam = function () {
+MyClassExtends.prototype.getSomeParam = function () {
   return this._someParam;
 };
 /**
  * Sets the someParam property. A public setter.
- * @returns {fMyClassExtends} The object to allow method chaining.
+ * @returns {MyClassExtends} The object to allow method chaining.
  */
-fMyClassExtends.prototype.setSomeParam = function (s) {
+MyClassExtends.prototype.setSomeParam = function (s) {
   this._someParam = s;
   return this;
 };
 /**
  * Access to parent class. Add this only when necessary. Always name it
  *   parent.
- * @type fMyClassOriginal.prototype
+ * @type MyClassOriginal.prototype
  */
-fMyClassExtends.prototype.parent = fMyClassOriginal.prototype;
+MyClassExtends.prototype.parent = MyClassOriginal.prototype;
 /**
  * Documenting a private property/method is generally desired, but not
  *   required.
@@ -180,12 +179,12 @@ fMyClassExtends.prototype.parent = fMyClassOriginal.prototype;
  * @type function
  * @private
  */
-fMyClassExtends.prototype.constructor = fMyClassExtends;
+MyClassExtends.prototype.constructor = MyClassExtends;
 /**
  * A static method copied from the original class for comformance and
  *   similarity to the PHP class.
  * @param {string} arg1 A string parameter.
  * @returns {string} The processed string.
  */
-fMyClassExtends.copyTheStaticMethod = fMyClassOriginal.copyTheStaticMethod; 
+MyClassExtends.copyTheStaticMethod = MyClassOriginal.copyTheStaticMethod;
 ```
