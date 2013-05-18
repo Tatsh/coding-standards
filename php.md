@@ -11,7 +11,7 @@
 
 ## PHP tags
 
-* Use `<?php` in code. If template files are in PHP, template files can use short tags (```<?=```).
+* Use `<?php` in code. If template files are in PHP, template files can use short tags (`<?=`).
 * Never include the closing `?>` at the end of a file.
 
 ## Keywords
@@ -93,7 +93,7 @@ switch ($exp) {
 
 The `:` version of this is allowed in templates.
 
-### `while```, `do while```
+### `while`, `do while`
 
 Brackets follow the same rule as `switch`. Each statement within this loop is indented 4 spaces.
 
@@ -115,7 +115,7 @@ do {
 
 The `:` version of this is allowed in templates.
 
-### `for```
+### `for`
 
 Brackets follow the same rule as `switch`. Each statement within this loop is indented 4 spaces.
 
@@ -130,7 +130,7 @@ Note the increment operator is after the variable, not before.
 
 The `:` version of this is allowed in templates.
 
-### `foreach```
+### `foreach`
 
 ```php
 <?php
@@ -143,9 +143,9 @@ The `:` version of this is allowed in templates.
 
 Note the placement of the keywords, and the `=>` operator having exactly one space before and one space after.
 
-### `try```,```catch```
+### `try`,`catch`
 
-In general, the exception variable name in the `catch` block should always be named `$e```.
+In general, the exception variable name in the `catch` block should always be named `$e`.
 
 ```php
 <?php
